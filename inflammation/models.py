@@ -41,6 +41,12 @@ def daily_min(data):
     :returns: an array with the minimum values for each day"""
     return np.min(data, axis=0)
 
+
+
+def std_dev(data):
+    """Computes and returns standard deviation for a 2D inflammation data array."""
+    return {'standard deviation': np.std(data, axis=0)}
+
 def patient_normalise(data):
     """Normalise patient data from a 2D inflammation data array
 
@@ -57,3 +63,4 @@ def patient_normalise(data):
         normalised = data / max_data[:, np.newaxis]
     normalised[np.isnan(normalised)] = 0
     return normalised
+
