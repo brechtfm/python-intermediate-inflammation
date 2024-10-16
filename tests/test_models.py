@@ -143,8 +143,8 @@ def test_daily_standard_deviation(test, expected, expected_raises):
     from inflammation.models import std_dev
     if expected_raises:
         with pytest.raises(expected_raises):
-            result_data = std_dev(test)['standard deviation']
-            npt.assert_approx_equal(result_data, expected)
+            result_data = std_dev(test)
+            npt.assert_allclose(result_data, expected)
     else:
-        result_data = std_dev(test)['standard deviation']
-        npt.assert_approx_equal(result_data, expected)
+        result_data = std_dev(test)
+        npt.assert_allclose(result_data, expected)
